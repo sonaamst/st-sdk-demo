@@ -1,0 +1,3 @@
+include ':sasto-tickets-sd'
+include ':app'
+rootProject.name = "ST SDK DEMO APP"
