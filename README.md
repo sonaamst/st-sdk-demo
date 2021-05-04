@@ -25,7 +25,7 @@ repositories {
 
 ```
 dependencies {
-   compile(name: ‘stsdk’, ext: ‘aar’)
+   implementation files('libs/stsdk.aar')
    implementation 'com.squareup.picasso:picasso:2.71828'
 }
 ```
