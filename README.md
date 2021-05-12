@@ -12,21 +12,23 @@ Once user selects the flights, the user will have to fill up their information t
 Add SDK to your project
 The .aar file must be added to libs folder of your projects app module (Your Project -> app -> libs ). After that add the following code in your apps build.gradle:
 
+For project level build.gradle
 ```
-android{
-...
-
-repositories {
-               flatDir {dirs ‘libs’}
-             }
-}
+ repositories {
+      //Add this on both buildscript & allprojects
+        maven { url "https://jitpack.io" }
+    }
 
 ```
 
 ```
 dependencies {
    implementation files('libs/stsdk.aar')
+
+   //Add the following dependencies too
    implementation 'com.squareup.picasso:picasso:2.71828'
+   implementation 'com.github.dhaval2404:imagepicker:1.8'
+   implementation 'com.github.florent37:inline-activity-result-kotlin:1.0.4'
 }
 ```
 
