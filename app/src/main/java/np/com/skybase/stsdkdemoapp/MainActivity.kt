@@ -16,8 +16,8 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<View>(R.id.button).setOnClickListener {
             val intent = Intent(this, SplashActivity::class.java)
-            intent.putExtra(SastoTicketsSDK.USERNAME,"XXXXXX")
-            intent.putExtra(SastoTicketsSDK.PASSWORD,"XXXXXX")
+            intent.putExtra(SastoTicketsSDK.USERNAME,"XXX")
+            intent.putExtra(SastoTicketsSDK.PASSWORD,"XXX")
             startActivityForResult(intent,
                 SastoTicketsSDK.RC_INIT
             )
@@ -30,7 +30,10 @@ class MainActivity : AppCompatActivity() {
         if (requestCode == SastoTicketsSDK.RC_INIT) {
             if (resultCode == RESULT_OK) {
                 println("SDK:: RESPONSE OK!")
-                println("SDK:: ${data?.extras.toString()}")
+                val bookingReferenceId = data?.extras?.get("bookingReferenceId")
+                println("bookingReferenceId:: $bookingReferenceId")
+
+                //use bookingReferenceId to get details when necessary
             } else {
                 println("SDK:: CANCEL!")
             }
